@@ -1,0 +1,20 @@
+name: Setup Action
+description: Regroupe le checkout, l'installation de Python et des dépendances
+
+inputs:
+  python-version:
+    description: 'Version de Python à utiliser'
+    required: true
+    default: '3.8'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Installation de Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ inputs.python-version }}
+        cache: 'pip'
+    - name: Installation des dépendances
+      run:  pip install -r requirements.txt
+      shell: bash
