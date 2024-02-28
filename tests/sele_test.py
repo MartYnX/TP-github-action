@@ -1,4 +1,4 @@
-from CollectInfo import toString
+from fortostring import toString
 
 
 def test_toString():
