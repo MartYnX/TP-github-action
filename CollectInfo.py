@@ -13,10 +13,10 @@ def toFormatAndPrint(href, title):
     return print({"href":href, "title":title })
 
 def toString(title, href):
-    return print(f"l'article intitulé {title} a pour lien {href}")
+    return "l'article intitule " + title + " a pour lien " + href
 
 for el in listTitle:
-    toString(el.find_element(By.CSS_SELECTOR, 'a').get_attribute("title"), el.find_element(By.CSS_SELECTOR, 'a').get_attribute("href"))
+    print(toString(el.find_element(By.CSS_SELECTOR, 'a').get_attribute("title"), el.find_element(By.CSS_SELECTOR, 'a').get_attribute("href")))
 
     
    

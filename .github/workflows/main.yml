@@ -55,7 +55,7 @@ jobs:
         with:
           pytest-coverage-path: pytest-coverage.txt
           junitxml-path: pytest.xml
-          github-token: ${{secrets.}}
+          github-token: ${{secrets.EXAMEN}}
 
       - name: Coverage
         run: coverage run -m pytest; coverage xml
@@ -64,7 +64,7 @@ jobs:
         uses: orgoro/coverage@v3.1
         with:
           coverageFile: coverage.xml
-          token: ${{secrets.}}
+          token: ${{secrets.EXAMEN}}
     needs: [build]
 
   notify:
