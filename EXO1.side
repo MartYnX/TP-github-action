@@ -1,0 +1,179 @@
+{
+  "id": "7919afde-576d-47b6-84ed-12550a3ba55d",
+  "version": "2.0",
+  "name": "carrefour",
+  "url": "https://fr.wikipedia.org/",
+  "tests": [{
+    "id": "941a6b4a-0994-45dd-a94b-e5f627d647c2",
+    "name": "news",
+    "commands": [{
+      "id": "4c45c8d6-5434-468a-883e-15fd7693c7d8",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.facebook.com/?locale=fr_FR",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d42b588f-6a7b-40d9-a602-785a993e1a69",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "800x912",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "81ab0fda-4c06-437b-be2b-53612471a073",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//form[@id='u_0_6_hC']/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "elmehdi.sellami1@gmail.com"
+    }, {
+      "id": "865e9169-b6b8-4e71-a1cd-24c23388d519",
+      "comment": "",
+      "command": "type",
+      "target": "id=pass",
+      "targets": [
+        ["id=pass", "id"],
+        ["name=pass", "name"],
+        ["css=#pass", "css:finder"],
+        ["xpath=//input[@id='pass']", "xpath:attributes"],
+        ["xpath=//div[@id='passContainer']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "MIdodolana1@"
+    }, {
+      "id": "87a0026f-99a3-45ff-a828-64924666bdee",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.\\_ihd",
+      "targets": [],
+      "value": "sellami"
+    }, {
+      "id": "fedd7a03-4cff-4bc2-8c57-209e43ab5b51",
+      "comment": "",
+      "command": "echo",
+      "target": "${sellami}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2babb2fa-ce3c-4fc8-a53a-f0d58db38046",
+      "comment": "",
+      "command": "store",
+      "target": "Connexions récentes",
+      "targets": [],
+      "value": "test"
+    }, {
+      "id": "c8564277-aa0a-45ab-a8a5-9e6c5ea2d942",
+      "comment": "",
+      "command": "assert",
+      "target": "test",
+      "targets": [],
+      "value": "${sellami}"
+    }]
+  }, {
+    "id": "ed2756a3-be51-45e0-9d9a-727cd1bbf5fa",
+    "name": "recherchewiki",
+    "commands": [{
+      "id": "3da0dfa1-2c68-4f11-9edd-a76b64c36348",
+      "comment": "",
+      "command": "open",
+      "target": "https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2f5b92e2-1f32-45f9-ae63-dacdb1e04109",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "802x912",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f83e28ed-a9b6-4abb-a678-5e4e621dd334",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mw-ui-icon-search",
+      "targets": [
+        ["css=.mw-ui-icon-search", "css:finder"],
+        ["xpath=//div[@id='p-search']/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b2bebc7a-4254-4bc9-9a74-df902741758a",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.cdx-search-input__end-button",
+      "targets": [
+        ["css=.cdx-search-input__end-button", "css:finder"],
+        ["xpath=//form[@id='searchform']/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Rechercher')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "39c86967-702f-40fb-8e0b-bc6bb379de4d",
+      "comment": "",
+      "command": "type",
+      "target": "name=search",
+      "targets": [
+        ["name=search", "name"],
+        ["css=.cdx-text-input__input", "css:finder"],
+        ["xpath=//input[@name='search']", "xpath:attributes"],
+        ["xpath=//form[@id='searchform']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "Elon Musk"
+    }, {
+      "id": "c3a0681f-08bf-40e3-9450-890780eaea06",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=search",
+      "targets": [
+        ["name=search", "name"],
+        ["css=.cdx-text-input__input", "css:finder"],
+        ["xpath=//input[@name='search']", "xpath:attributes"],
+        ["xpath=//form[@id='searchform']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "157f3e4a-71fa-4f43-a431-87dc148a5ece",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.mw-page-title-main",
+      "targets": [],
+      "value": "abou"
+    }, {
+      "id": "8defbed5-8407-45d5-8cf4-ce896532a5a5",
+      "comment": "",
+      "command": "store",
+      "target": "Elon Musk",
+      "targets": [],
+      "value": "me "
+    }, {
+      "id": "1d91e5e6-4321-4a66-bd23-c3fb45f62736",
+      "comment": "",
+      "command": "assert",
+      "target": "me",
+      "targets": [],
+      "value": "${abou}"
+    }]
+  }],
+  "suites": [{
+    "id": "e6fcf54a-56b6-4367-a25d-9b145ebc7a87",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.carrefour.fr/", "https://www.facebook.com/?locale=fr_FR", "https://fr.wikipedia.org/"],
+  "plugins": []
+}
