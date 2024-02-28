@@ -4,10 +4,19 @@ import time
 
 browser = webdriver.Chrome()
 browser.get(
-    "https://www.amazon.fr/s?k=books&__mk_fr_FR=ÅMÅŽÕÑ&crid=PERU3TOCZEPS&sprefix=books%2Caps%2C101&ref=nb_sb_noss_1"
+    "https://fr.wikipedia.org/w/index.php?search=ordi&title=Spécial:Recherche&profile=advanced&fulltext=1&ns0=1"
 )
-element = browser.find_element(By.ID, "nav-search-submit-button")
-element.send_keys("books")
-print(element)
+
+listTitle = browser.find_elements(By.CLASS_NAME,"mw-search-result-heading")
+
+def toFormatAndPrint(href, title):
+    return print({"href":href, "title":title })
+
+for el in listTitle:
+    toFormatAndPrint(el.find_element(By.CSS_SELECTOR, 'a').get_attribute("href"),el.find_element(By.CSS_SELECTOR, 'a').get_attribute("title"))
+
+
+
+ 
 time.sleep(3)
 browser.close()
